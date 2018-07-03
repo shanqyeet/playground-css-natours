@@ -1,5 +1,6 @@
-btn {
-    &:link, &:visited {
+.btn {
+    &:link, 
+    &:visited {
         text-transform: uppercase;
         text-decoration: none;
         padding: 1.5rem 4rem;
@@ -16,13 +17,7 @@ btn {
         &::after {
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0;
-        }
-    
-        &--animated {
-            animation: moveInBottom .5s ease-out .75s;
-            animation-fill-mode: backwards;
-        }
-   
+        }   
     }
 
     &:active {
@@ -33,6 +28,10 @@ btn {
     &--white {
         background-color: white;
         color: $color-grey-dark;
+    
+        &::after {
+            background-color: $color-white;
+        }
     }
 
     &::after {
@@ -48,10 +47,9 @@ btn {
         transition: all .4s;
     }
 
-    &--whiter::after {
-        background-color: $color-white;
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
     }
-
-   
 }
 
